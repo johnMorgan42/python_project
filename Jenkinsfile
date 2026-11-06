@@ -3,12 +3,12 @@
 
     stages {
         stage('Checkout') {
-            steps {
-                // pulls your repo
-                git branch: 'main',
-                    url: 'https://github.com/bassam2080/python_project.git'
-            }
-        }
+              steps {
+                  echo 'Downloading project from GitHub'
+                  checkout scm
+              }
+          }
+
 
         stage('Setup Python (dind)') {
             steps {
